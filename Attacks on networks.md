@@ -18,6 +18,7 @@ First, a foothold must be established in the system. This can be done via a phis
 Now the infected machine can try making contact with the ”bot master” which van be the attackers server. The attacker then starts sending instructions that the C2 infected host carries out. Additional software can be downloaded for example.
 
 ###### Fully infected
+
 Now the attacker has full control of the system and can excecute any code. Typically at this stage the attacker will try to spread to more computers and create a botnet. This way the attacker can gain full control of an entire network.
 ##### Reasons for DNS calls
 A high amount of DNS calls in the network traffic might indicate C2 activity.
@@ -40,7 +41,7 @@ A high amount of DNS calls in the network traffic might indicate C2 activity.
 
 ##### C2 tactics
 
-According to the Mitre Att&ck framework [[Pen testing standards documents#Mitre Att&ck]], there are over 16 different command-and-control tactics used by adversaries, including numerous subtechniques:
+According to the [[Pen testing standards documents#Mitre Att&ck |Mitre Att&ck]] framework, there are over 16 different command-and-control tactics used by adversaries, including numerous subtechniques:
 
 1. Application Layer Protocol
 2. Communication Through Removable Media

@@ -9,3 +9,4 @@ THM has many CTFs, one that I have participated in was the Advent of cyber 2023.
 Myndigheten för samhällsskydd och beredskap (MSB).
 #### CERT-SE CTF 2024
 <scenario> En fiktiv organisation har blivit drabbad av ett utpressningsangrepp. De har lyckats få igång en reservkanal för kommunikation och har lyckats komma åt delar av sin infrastruktur. Kan du hitta alla flaggorna? </scenario>
+[[MSB_CERT-SE_CTF_2024]]
