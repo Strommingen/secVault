@@ -7,7 +7,6 @@ Has **Gather Victim Identity Information** info section in **Reconnaissance** se
 1. Techniques for gathering credentials 
 2. Email addresses 
 3. Employee names.
-
 ## OWASP WSTG
 Guide focused on web app testing.
 Covers high level phases of web app security testing and digs deeper into the testing methods used.
