@@ -135,3 +135,8 @@ According to the [[Pen testing standards documents#Mitre Att&ck |Mitre Att&ck]] 
 14. Remote Access Software
 15. Traffic Signaling
 16. Web Service
+
+##### C2 techniques
+ 
+ There are 3 different models for C2 attacks that determine how the infected machine will communicate with the bot master. Each designed to avoid detection as long as possible.
+ - **Centralized architecture**: probably the most common model. After infection, a computer will join the botnet, establishing contact with C2 server and waiting for orders.
