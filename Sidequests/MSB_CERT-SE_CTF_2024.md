@@ -38,7 +38,7 @@ SHA-256 checksum to go along: 7113f236b43d1672d881c6993a8a582691ed4beb4c7d49befb
 
 Someone posted a wordlist scraped from their public website, and ranting about recording web traffic from workstation CTF-PC01.
 
-IP they found suspicious. Involved in C2 and exfiltration activities. 195.200.72.82
+IP they found suspicious. Involved in [[Attacks on networks#C2 or C&C |C2]] and exfiltration activities. 195.200.72.82
 
 #### Stream 3:
 corp_net1.pcap file sent to .20
