@@ -1,3 +1,4 @@
+#CTF
 ### Original file: CERT-SE_CTF2024.pcap
 
 Identified ip/mac addresses on file:
@@ -40,6 +41,8 @@ Someone posted a wordlist scraped from their public website, and ranting about r
 
 IP they found suspicious. Involved in [[Attacks on networks#C2 or C&C |C2]] and exfiltration activities. 195.200.72.82
 
+#### Stream 2:
+ransom
 #### Stream 3:
 corp_net1.pcap file sent to .20
 
@@ -52,6 +55,7 @@ Encrypted data but at the bottom is alot of "whatyoulookingat.com".
 Also packet 1030 has alot of windows directory from recycle bin. and also whatyoulookingat.com, cloudflare.net and sapo.se.cdn.
 They seem to have extracted Recycle-Bin.zip here also.
 
+Extracted corp_net1.pcap here.
 
 #### Stream 5:
 
@@ -101,9 +105,21 @@ The secret file is probably a lost cause, I will instead focus on cracking the s
 
 ## ransomNote.gz
 
-After neglecting this file I ran gzrecover on it and got a ASCII text file. But the file was unusable, it was a very long file with 
+After neglecting this file I ran gzrecover on it and got a ASCII text file. But the file was corrupted. The checksum is wrong, the original conversation the had the checksum provided: 7113f236b43d1672d881c6993a8a582691ed4beb4c7d49befbceb1fddfb14909.
 
+## corp_net1.pcap
+
+Here I found the password for the secret.encrypted file. Since I knew from the ransomware.sh script that the password was obtained from `whatyoulookingat.com/1.txt`, I searched for this as a regular expression in packet details. This led me to tcp stream 53 in this file. And packet 1920 had a payload of 17 bytes which had the password. 
+
+	Password: pheiph0Xeiz8OhNa
+
+Now I could decrypt the file. 
+```
+openssl enc -d -aes-128-cbc -in secret.encrypted -out secret.txt -pass pass:pheiph0Xeiz8OhNa
+```
+And in secret.txt was CTF\[OPPORTUNISTICALLY]
 ### FLAGS:
 
 CTF\[E65D46AD10F92508F500944B53168930]
-PASS CTF\[AES128]
+CTF\[AES128]
+CTF\[OPPORTUNISTICALLY]

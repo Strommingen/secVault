@@ -1,4 +1,5 @@
 ## LAN attacks
+#CCNA
 
 #### DHCP Attacks
 ##### DHCP Starvation Attack
@@ -20,7 +21,7 @@ To mitigate ARP attacks one can implement a [[Defensive tools#Dynamic ARP inspec
 
 Attackers expoit the gratuitous [[Network Protocols#ARP|ARP]] message by sending a spoofed MAC address to a switch, this switch will then update its MAC table accordingly. Any hosts can therefore claim to be the owner of any IP and MAC address combination that they choose. 
 
-This type of attack is kind of specific to IPv4 since IPv6 uses [[Network Protocols#Neighbor Discovery/Advertisment Protocol|Neighbor Discovery Protocol]] instead for its Layer 2 address resolution. IPv6 includes strategies to mitigate Neighbor Advertisement spoofing, similar to the way IPv6 prevents a spoofed ARP Reply.
+This type of attack is kind of specific to IPv4 since IPv6 uses [[Network Protocols#Neighbor Discovery/Advertisement|Neighbor Discovery Protocol]] instead for its Layer 2 address resolution. IPv6 includes strategies to mitigate Neighbor Advertisement spoofing, similar to the way IPv6 prevents a spoofed ARP Reply.
 #### Address Spoofing Attack
 
 These attacks can be mitigated by implementing a [[Defensive tools#IPSG |IPSG]].
