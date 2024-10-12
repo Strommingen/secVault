@@ -108,6 +108,7 @@ The secret file is probably a lost cause, I will instead focus on cracking the s
 After neglecting this file I ran gzrecover on it and got a ASCII text file. But the file was corrupted. The checksum is wrong, the original conversation the had the checksum provided: 7113f236b43d1672d881c6993a8a582691ed4beb4c7d49befbceb1fddfb14909.
 
 ## corp_net1.pcap
+### secret.encrypted
 
 Here I found the password for the secret.encrypted file. Since I knew from the ransomware.sh script that the password was obtained from `whatyoulookingat.com/1.txt`, I searched for this as a regular expression in packet details. This led me to tcp stream 53 in this file. And packet 1920 had a payload of 17 bytes which had the password. 
 
@@ -118,6 +119,24 @@ Now I could decrypt the file.
 openssl enc -d -aes-128-cbc -in secret.encrypted -out secret.txt -pass pass:pheiph0Xeiz8OhNa
 ```
 And in secret.txt was CTF\[OPPORTUNISTICALLY]
+
+### puzzle.exe
+
+After tls decryption of this file I found on stream 59 that puzzle.exe was extracted. This is most likely the file transmitted on stream 60.
+This was correct, it is a puzzle.
+
+### recycle-bin.zip
+
+Stream 63 mentions transferring file Recycle-bin.zip. Extracted on stream 64.
+
+### archive
+
+Stream 66 mentions transferring file archive. Extracted on 
+
+## corp_net2.pcap
+### unauthorized html
+
+Stream 57 had an html file where something was unauthorized.
 ### FLAGS:
 
 CTF\[E65D46AD10F92508F500944B53168930]
