@@ -124,6 +124,11 @@ And in secret.txt was CTF\[OPPORTUNISTICALLY]
 
 After tls decryption of this file I found on stream 59 that puzzle.exe was extracted. This is most likely the file transmitted on stream 60.
 This was correct, it is a puzzle.
+Solved the puzzle, gave nothing, must be something more about it though.
+
+#### Reverse engineer
+#SRE 
+Running `file puzzle.exe` in [[Bug hunting tools#Git bash|gitbash]] tells that it is a `PE32+ excecutable (GUI) x86-64, for MS Windows, 6 sections.`
 
 ### recycle-bin.zip
 
