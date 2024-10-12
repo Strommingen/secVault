@@ -5,7 +5,7 @@ Used for analysing traffic on a network as a reconnaissance tool.
 Tool for recovering corrupted .gz files. ![[Recovering corrupted files#.gz files]]
 ## TestDisk
 
-Tool for testing disk files and extracting files from those disks.
+Tool for testing disk files and extracting files from those disks. Used in [[MSB_CERT-SE_CTF_2024]].
 ## Openssl
 [[Network Protocols#TLS|TLS]]
 
@@ -44,6 +44,8 @@ It is commonly used to steal credentias and escalate privileges because endpoint
 When extracting certificates with this tool the default password is 'mimikatz'.
 ## Aircrack-ng
 This tool is for cracking WPA/WPA2-PSK passwords, aka wifi passwords.
+
+Used in [[THM_AOC_2023_first]].
 
 ### Wpaclean
 To make the cracking faster you can use wpaclean to clean the file, slimming it down so that there are not as many packets to go through for aircrack-ng, or whatever used for the cracking. 
