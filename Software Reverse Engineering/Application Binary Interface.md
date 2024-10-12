@@ -1,5 +1,5 @@
 #SRE 
-Application binary interface (ABI) are the ”agreements” that the computer makes with the processor about the registers thay will contain values when our function is called.
+Application binary interface (ABI) are the ”agreements” that the compiler makes with the processor about the registers thay will contain values when our function is called.
 
 foo(1,2):
 - rdi; 1
