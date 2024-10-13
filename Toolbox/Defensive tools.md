@@ -1,10 +1,10 @@
 #Defensive_tools
 ## DAI
-#CCNA 
+#CCNA #l2
 Dynamic ARP inspection (DAI)
 
 ## IPSG
-#CCNA 
+#CCNA #l2
 IP Source Guard (IPSG)
 
 ## BPDU Guard

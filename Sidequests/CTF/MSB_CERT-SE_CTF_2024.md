@@ -18,18 +18,6 @@ Pass: NcFTP@
 stream 0 and 1 are the same but 10.0.0.10 is involved in stream 1 and .20 in stream 0. .30 is involved in both.
 
 Holds a conversation from employees discovering they have been hacked. Same on stream 1, only from the other employees perspective.
-From beginning of stream output of system
-:irc.ctf.alt 005 D3f3nd3r CHANNELLEN=50 NICKLEN=9 TOPICLEN=490 AWAYLEN=127 KICKLEN=400 MODES=5 MAXLIST=beI:50 EXCEPTS=e INVEX=I PENALTY FNC :are supported on this server
-:irc.ctf.alt 251 D3f3nd3r :There are 1 users and 0 services on 1 servers
-:irc.ctf.alt 253 D3f3nd3r 1 :unknown connection(s)
-:irc.ctf.alt 254 D3f3nd3r 1 :channels formed
-:irc.ctf.alt 255 D3f3nd3r :I have 1 users, 0 services and 0 servers
-:irc.ctf.alt 265 D3f3nd3r 1 2 :Current local users: 1, Max: 2
-:irc.ctf.alt 266 D3f3nd3r 1 2 :Current global users: 1, Max: 2
-:irc.ctf.alt 250 D3f3nd3r :Highest connection count: 2 (4 connections received)
-:irc.ctf.alt 375 D3f3nd3r :- irc.ctf.alt message of the day
-:irc.ctf.alt 372 D3f3nd3r :- "Hello world!"
-:irc.ctf.alt 376 D3f3nd3r :End of MOTD command
 
 Found first flag on packet 1742.
 Second on packet 4.

@@ -1,4 +1,5 @@
 ## TLS
+#l5
 ### TLS 1.2
 Older version. A typical handshake is between 5-7 packets.
 #### Handshake
@@ -8,7 +9,7 @@ Faster handshake, typically 0-3 packets. This leads to faster and more responsiv
 #### Handshake
 
 ## ARP
-#CCNA 
+#CCNA #l2 
 ARP (Address Resolution Protocol) Requests are a network layer protocol used by hosts to determine the MAC address of a host with a particular IPv4 address. ARP Requests are always broadcast messages. 
 
 Typically this is done to discover the MAC address of the default gateway. All hosts on the subnet receive and process the ARP Request. But the host with the matching IPv4 address in the ARP Request is the one that sends a reply, which would be an ARP Reply.
@@ -18,11 +19,11 @@ A client is allowed to send an unsolicited ARP Request called a "gratuitous ARP"
 ## Neighbor Discovery/Advertisement
 
 ## STP
-#CCNA 
+#CCNA #l2
 Spanning Tree Protocol (STP)
 
 ## CDP/LLDP
-#CCNA 
+#CCNA #l2 
 Cisco Discovery Protocol (CDP) is a cisco proprietary Layer 2 link discovery protocol. By default it is enabled on all Cisco devices. 
 Link Layer Discovery Protocol (LLDP) is an open standard protocol
 
@@ -40,9 +41,10 @@ The receiving device stores and updates this information in its CDP/LLDP databas
 While the protocol is useful for troubleshooting it is important to consider the [[Attacks on networks#CDP/LLDP Reconnaissance|vulnerabilities]] also, especially since, as mentioned, CDP is **enabled by default** on all cisco devices.
 
 ## 802.1Q
-#CCNA 
+#CCNA #l2
 ## DTP
-#CCNA 
+#CCNA #l2
 Dynamic Trunking Protocol (DTP)
 
 ## RDP
+#l7
