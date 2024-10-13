@@ -128,15 +128,26 @@ Solved the puzzle, gave nothing, must be something more about it though.
 
 #### Reverse engineer
 #SRE 
-Running `file puzzle.exe` in [[Bug hunting tools#Git bash|gitbash]] tells that it is a `PE32+ excecutable (GUI) x86-64, for MS Windows, 6 sections.`
+Running `file puzzle.exe` in [[SRE Tools#Git bash|gitbash]] tells that it is a `PE32+ excecutable (GUI) x86-64, for MS Windows, 6 sections.`
+
+Decompiling with [[SRE Tools#IDA|IDA]]
 
 ### recycle-bin.zip
 
 Stream 63 mentions transferring file Recycle-bin.zip. Extracted on stream 64.
+The files seem to only reference where they where on the original computer. 
+But there was an HFS HTTP file server .exe under the name $RL7SXXI.exe here where I could add the files and view them in the browser.
 
+Alot of interesting files here. Might have to use IDA to see what $ID8WDX0.exe and $IL7SXXI.exe does because windows wont let me run it.
+
+$RCXHUFJ.zip has NewFileTime.exe.
+
+$RZ8ZSGB.zip holds file "Biografi" with 69 .txt files, each of 1kb size. All files is just one word of "Lorem ipsum" in order it seems.
+
+$IZ8ZSGB.zip, $ICXHUFJ.zip, $IWOD8TX.zip is damaged, using gzrecover got me nowhere. They all have 0x00 0x02 as magic number in beginning of file.
 ### archive
 
-Stream 66 mentions transferring file archive. Extracted on 
+Stream 66 mentions transferring file archive. Extracted on 67.
 
 ## corp_net2.pcap
 ### unauthorized html
