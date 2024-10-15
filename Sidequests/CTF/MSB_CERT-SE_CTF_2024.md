@@ -173,6 +173,12 @@ Stream 57 had an html file where something was unauthorized.
 
 ### NTLM packet 10639 - 10640
 
+
+| Actor      | IPv6                      | MAC               | IPv4           |
+| ---------- | ------------------------- | ----------------- | -------------- |
+| Requesting | fe80::dcf6:cc94:c4f2:82c2 | a4:97:b1:f0:c8:fb | 192.168.200.57 |
+| Recieving  | fe80::f786:f9ae:ab5d:43c9 | 00:0c:29:b0:0c:00 |                |
+
 There are a lot of tries to authenticate traffic with NTLM. But the only one that was successful was packet 10639 indicated by packet 10640.
 #### From Challenge packet
 NTLM Server Challenge: fe26bf30955b64d7
@@ -181,7 +187,6 @@ User Name: CTF
 Domain: LAB
 NTLM proof string: a406a1570d0391d358354bb21df7d12e 
 NTLM Response without proof string: 0101000000000000158bece036fada0136c00153f7ab788b00000000020008004d00550044004a0001001e00570049004e002d0035004600560037004d004e0055004200410030004b00040014004d00550044004a002e004c004f00430041004c0003003400570049004e002d0035004600560037004d004e0055004200410030004b002e004d00550044004a002e004c004f00430041004c00050014004d00550044004a002e004c004f00430041004c000800300030000000000000000000000000200000fd6f62357ae25314e0b8f63ab17e5d1821479e68ec22e7ee70827eadb2f393200a001000000000000000000000000000000000000900200048005400540050002f00640063006300300031002e006c006f00630061006c000000000000000000
-
 #### Hashcat
 Saving the above values in the following format in a txt file:
 username::domain:ServerChallenge:NTproofstring:modifiedntlmv2response
