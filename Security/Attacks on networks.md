@@ -137,6 +137,8 @@ According to the [[Pen testing standards documents#Mitre Att&ck |Mitre Att&ck]] 
 15. Traffic Signaling
 16. Web Service
 
+###### C2 orders
+Orders can also be sent over DNS encrypted in the domain name field as in this example [[MSB_CERT-SE_CTF_2024#DNS]]
 ##### C2 techniques
  
  There are 3 different models for C2 attacks that determine how the infected machine will communicate with the bot master. Each designed to avoid detection as long as possible.
