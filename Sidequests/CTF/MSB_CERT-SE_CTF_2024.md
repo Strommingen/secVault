@@ -112,13 +112,18 @@ And in secret.txt was CTF\[OPPORTUNISTICALLY]
 
 After tls decryption of this file I found on stream 59 that puzzle.exe was extracted. This is most likely the file transmitted on stream 60.
 This was correct, it is a puzzle.
-Solved the puzzle, gave nothing, must be something more about it though.
+Solved the puzzle, gave nothing, must be something more about it though. 
+
+When I completed the puzzle I took a screenshot of it. Now looking back at it I see the flag next to Kalles face.
+
+CTF\[HAPPY BIRTHDAY]
 
 #### Reverse engineer
 #SRE 
 Running `file puzzle.exe` in [[SRE Tools#Git bash|gitbash]] tells that it is a `PE32+ excecutable (GUI) x86-64, for MS Windows, 6 sections.`
 
 Decompiling with [[SRE Tools#IDA|IDA]]
+There was no need for this.
 
 ### recycle-bin.zip
 
@@ -133,6 +138,18 @@ $RCXHUFJ.zip has NewFileTime.exe.
 $RZ8ZSGB.zip holds file "Biografi" with 69 .txt files, each of 1kb size. All files is just one word of "Lorem ipsum" in order it seems.
 
 $IZ8ZSGB.zip, $ICXHUFJ.zip, $IWOD8TX.zip is damaged, using gzrecover got me nowhere. They all have 0x00 0x02 as magic number in beginning of file.
+
+Seems like recycle bin makes reference files so when it starts with `$I` it is just a reference file.
+
+When sorting for date $R80Z3YX.txt is dated 1984-06-06. This is the birthdate for tetris which is a part of the puzzle.exe file on the puzzles computer. The file contains: 
+`Jamborino Jamboro Archipelago Island Apple Horse`
+`Monkey Dog`
+`Kit Kat House Flower`
+
+The metadata file of this file contains the original file path `C:\Users\aleksjej.pazjitnov\Downloads\INKEMW2QIVHFIT2NJFHE6U25.txt`.
+**Alexey Pajitnov** was apparently the creator of tetris. The file name `INKEMW2QIVHFIT2NJFHE6U25` appears to be Base32 encoded. After decoding, found the flag:
+CTF\[PENTOMINOS]
+
 ### archive
 
 Stream 66 mentions transferring file archive. Extracted on 67.
@@ -155,6 +172,8 @@ From here, extract all the data to a csv file and then modify it to only have th
 Stream 57 had an html file where something was unauthorized.
 
 ### NTLM packet 10639 - 10640
+
+There are a lot of tries to authenticate traffic with NTLM. But the only one that was successful was packet 10639 indicated by packet 10640.
 #### From Challenge packet
 NTLM Server Challenge: fe26bf30955b64d7
 #### From Auth packet
@@ -168,14 +187,18 @@ Saving the above values in the following format in a txt file:
 username::domain:ServerChallenge:NTproofstring:modifiedntlmv2response
 
 `hashcat -m 5600 ntlm.txt WORDLIST.txt`
-Wordlist is the wordlist file obtained previously. In the convo from beginning they mentioned the wordlist with the 
+Wordlist is the wordlist file obtained previously. In the conversation from beginning they mentioned the wordlist with the workstation `CTF-PC01` and the user name is CTF which indicates that this is a flag maybe. This is the reasoning behind trying this and cracking the password from this packet with this wordlist.
+
+The password hashcat cracked was \[RHODE_ISLAND_Z].
 ### FLAGS:
 **9 flags in total**
-**4/9**
+**8/9**
 
 CTF\[E65D46AD10F92508F500944B53168930]
 CTF\[AES128]
 CTF\[OPPORTUNISTICALLY]
 CTF\[IRRITATING]
-CTF\[RHODE_ISLAND_Z]
+\[RHODE_ISLAND_Z]
 CTF\[TOPPALUA]
+CTF\[HAPPY BIRTHDAY]
+CTF\[PENTOMINOS]
