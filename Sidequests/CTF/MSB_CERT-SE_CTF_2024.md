@@ -136,13 +136,46 @@ $IZ8ZSGB.zip, $ICXHUFJ.zip, $IWOD8TX.zip is damaged, using gzrecover got me nowh
 ### archive
 
 Stream 66 mentions transferring file archive. Extracted on 67.
+Opening it with gunzip, winrar, etc does not work. Trying to recover it with gzrecover does not work.
+Only thing that worked was 7zip. But not extracting it, only viewing it. So going deep into it, because it is nestled file after nestled file etc. Last one had a flag:
+CTF\[IRRITATING]
 
+### DNS
+
+A lot of DNS messages that are suspicious. After inspecting these, I noticed some of them have only one A, and OPT at the end. The ones that were interesting were in base64 or base32. So the below filter filtered out all the unwanted frames. 
+
+`ip.src == 192.168.137.28  && dns && dns.qry.type == 1 && !(dns.qry.name contains ".com" ||dns.qry.name contains ".org" || dns.qry.name contains ".tech" || dns.qry.name contains ".net" || dns.qry.name contains ".ms"|| dns.qry.name contains ".org" || dns.qry.name contains ".arpa"||  dns.qry.name contains ".se" )`
+
+`dns.qry.type == 1 `  A flag is 1. 
+
+From here, extract all the data to a csv file and then modify it to only have the names section (data).
 ## corp_net2.pcap
 ### unauthorized html
 
 Stream 57 had an html file where something was unauthorized.
+
+### NTLM packet 10639 - 10640
+#### From Challenge packet
+NTLM Server Challenge: fe26bf30955b64d7
+#### From Auth packet
+User Name: CTF
+Domain: LAB
+NTLM proof string: a406a1570d0391d358354bb21df7d12e 
+NTLM Response without proof string: 0101000000000000158bece036fada0136c00153f7ab788b00000000020008004d00550044004a0001001e00570049004e002d0035004600560037004d004e0055004200410030004b00040014004d00550044004a002e004c004f00430041004c0003003400570049004e002d0035004600560037004d004e0055004200410030004b002e004d00550044004a002e004c004f00430041004c00050014004d00550044004a002e004c004f00430041004c000800300030000000000000000000000000200000fd6f62357ae25314e0b8f63ab17e5d1821479e68ec22e7ee70827eadb2f393200a001000000000000000000000000000000000000900200048005400540050002f00640063006300300031002e006c006f00630061006c000000000000000000
+
+#### Hashcat
+Saving the above values in the following format in a txt file:
+username::domain:ServerChallenge:NTproofstring:modifiedntlmv2response
+
+`hashcat -m 5600 ntlm.txt WORDLIST.txt`
+Wordlist is the wordlist file obtained previously. In the convo from beginning they mentioned the wordlist with the 
 ### FLAGS:
+**9 flags in total**
+**4/9**
 
 CTF\[E65D46AD10F92508F500944B53168930]
 CTF\[AES128]
 CTF\[OPPORTUNISTICALLY]
+CTF\[IRRITATING]
+CTF\[RHODE_ISLAND_Z]
+CTF\[TOPPALUA]
