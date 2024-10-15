@@ -3,6 +3,8 @@
 https://crackmes.one/
 Pwnsble.kr
 
+## Assembly
+[[Assembly instructions]]
 ## Concepts
 ![[ABI]]
 
