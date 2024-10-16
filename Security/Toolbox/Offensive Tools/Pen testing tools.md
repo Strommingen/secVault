@@ -1,4 +1,4 @@
-#Offensive_tools #linux 
+#offence #linux 
 ## Gzrecover
 #corruptfile
 Tool for recovering corrupted .gz files. ![[Recovering corrupted files#.gz files]]

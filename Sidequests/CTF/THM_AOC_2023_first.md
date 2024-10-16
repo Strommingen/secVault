@@ -41,3 +41,6 @@ A lot of RDP packets on this layer.
 Now we will use [[Pen testing tools#PyRDP Convert|pyrdp-convert]] to replay the RDP pdu's. 
 After exporting the pcap file by `File > Export PDUs` and selecting `OSI Layer 7`. We run the command:
 `pyrdp-convert -f replay '<filepath.pcap>'`
+
+
+#### C2 or C&C

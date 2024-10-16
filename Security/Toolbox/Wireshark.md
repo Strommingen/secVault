@@ -1,4 +1,4 @@
-#Defensive_tools #Offensive_tools #pcap #linux 
+#defence #offence  #pcap #linux 
 ### Decrypt TLS traffic
 ![[Network Protocols#TLS]]
 Three ways according to wiresharks official website.

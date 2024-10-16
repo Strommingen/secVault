@@ -48,3 +48,9 @@ Dynamic Trunking Protocol (DTP)
 
 ## RDP
 #l7
+
+## PaGP and LACP
+#l2 #CCNA 
+
+## DHCP
+#l3 #CCNA
